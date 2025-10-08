@@ -1,0 +1,256 @@
+Build a coffee landing page (barebones, responsive, modern, semantic)
+Goal
+ Build a small, production-ready landing page for a coffee business. Deliver separate index.html, styles.css, and script.js files (no bundlers, no frameworks). The result must be visually polished, accessible, responsive, and follow the exact constraints below.
+Project structure (required)
+/index.html
+/styles.css
+/script.js
+/assets/
+  /icons.svg (optional)
+  /hero.jpg (optional placeholder)
+README.md
+
+High-level requirements
+Topic: coffee — use imagery and text appropriate for a small coffee business / roastery / café.
+
+
+Semantic HTML only: use <header>, <main>, <section>, <footer>. No non-semantic containers except when appropriate (e.g., <div> for layout).
+
+
+Styling: pure hand-written CSS only. No Tailwind, Bootstrap, shadcn, or any CSS frameworks.
+
+
+JavaScript: vanilla only. Keep it minimal (e.g., mobile nav toggle, a11y helpers). No React / Vue / Angular / frontend frameworks.
+
+
+Deliver clean, well-commented, production-ready code.
+
+
+Design direction & UX
+Color palette: dark — provide a refined dark palette (deep coffee/brown, charcoal, muted gold/cream accent). Provide CSS variable names and hex values in :root.
+
+
+Overall style: modern, geometric art direction, professional tone, sans-serif typography.
+
+
+Layout personality: centered single column (content centered with max-width).
+
+
+Spacing: compact and dense (tight rhythm but readable).
+
+
+Buttons & links: subtle ghost buttons (transparent background, thin border, subtle hover).
+
+
+Imagery approach: minimal icons (inline SVGs), 1 hero image or tasteful geometric coffee illustration.
+
+
+Motion: smooth & subtle (micro-interactions, hover transitions, gentle reveal animation).
+
+
+HTML/Accessibility requirements
+Use semantic landmarks: header, main, section(s), footer.
+
+
+Include a skip-to-content link for keyboard users.
+
+
+Header must contain site name/logo (inline SVG or text) + simple nav (Home, Menu, About, Contact).
+
+
+Hero section: heading, subheading, CTA button (primary), a short supporting paragraph.
+
+
+Footer: copyright, minimal links (privacy, terms).
+
+
+Use meaningful alt text for images. Provide ARIA attributes where needed (e.g., aria-expanded for mobile menu).
+
+
+Ensure focus styles are visible and high-contrast.
+
+
+Keyboard navigation must be fully usable (tab order, close mobile menu with Esc).
+
+
+Provide semantic headings (H1 only once, correct hierarchy).
+
+
+CSS technical requirements (must follow)
+Minimal reset: * { box-sizing: border-box; margin: 0; padding: 0; }.
+
+
+Use CSS variables in :root for colors, fonts, spacing, radii, etc.
+
+
+Fluid typography using clamp() for the main heading and base text.
+
+
+Mobile-first with media queries for larger breakpoints.
+
+
+Use Flexbox and CSS Grid for layout where appropriate.
+
+
+Use logical properties (e.g., margin-inline, padding-block) for spacing.
+
+
+Use aspect-ratio for consistent media sizing (hero image/media).
+
+
+Use svh/lvh/dvh or modern viewport units to account for mobile browser UI.
+
+
+Smooth transitions for hover/focus states (e.g., transition: transform .22s ease, box-shadow .22s ease).
+
+
+Dark/light mode support using prefers-color-scheme — default to dark, but provide light mode adjustments.
+
+
+Accessible hover & focus: high contrast and visible outlines. Focus should not be removed.
+
+
+Use compact/dense spacing (tight vertical rhythm) but retain readability.
+
+
+JavaScript requirements
+Single script.js file.
+
+
+Minimal behavior:
+
+
+Toggle mobile navigation (add/remove aria-expanded, animate slide/fade).
+
+
+Close mobile nav on Esc key.
+
+
+Optionally: smooth-scroll to sections for anchor links (no polyfills required).
+
+
+No external libraries. Keep logic small and well-commented.
+
+
+Imagery & icons
+Use inline SVGs for logo and small icons (no external icon libraries).
+
+
+If using photos, use a single hero image in /assets/hero.jpg (can be a placeholder). If the agent cannot fetch images, use a tasteful CSS background gradient + geometric SVG illustration as placeholder.
+
+
+Provide descriptive alt text for images (e.g., alt="Barista steaming milk over an espresso machine").
+
+
+Deliverable expectations
+index.html — semantic markup, comments explaining structure and accessibility considerations, links to CSS and JS.
+
+
+styles.css — well-structured, commented sections (root variables, reset, layout, components, utilities, theme toggles).
+
+
+script.js — minimal vanilla JS with comments and short functions.
+
+
+README.md — short instructions how to preview (open index.html), notes about accessibility testing performed, color palette, and files list.
+
+
+Commit history: a few small commits (e.g., init: add base HTML, feat: add responsive styles and hero, chore: add mobile nav script) — if agent uses git on Replit.
+
+
+Testing & accessibility checks (instructions for agent)
+Keyboard test: Tab through header/nav, open/close mobile menu, ensure focus is visible and order logical.
+
+
+Color contrast: Ensure text meets at least WCAG AA contrast with background (especially the hero heading and CTA).
+
+
+Semantic checks: H1 present and unique, landmark elements present.
+
+
+Mobile responsiveness: test at 375px, 768px, 1024px. Ensure hero image respects aspect ratio and content remains centered single-column.
+
+
+ARIA: mobile menu reports aria-expanded="true|false", icons have aria-hidden where appropriate.
+
+
+Performance: CSS should be compact and selective; avoid huge images.
+
+
+Production-ready requirements (non-negotiable)
+No external CSS or JS frameworks.
+
+
+No CDN assets unless essential — prefer inline SVGs and small local assets.
+
+
+Comments: all files must be commented explaining why choices were made (especially CSS variable choices, breakpoints, and JS behaviors).
+
+
+Code must be valid HTML5 and no console errors.
+
+
+Sample design tokens (suggested — agent may choose final values but follow same names)
+:root{
+  --bg: #0b0a0a;
+  --surface: #161415;
+  --muted: #bfb6aa;
+  --accent: #cfa06b; /* warm golden */
+  --accent-2: #7a4b2a; /* coffee brown */
+  --text: #f6f3f0;
+  --radius: 10px;
+  --gap: 0.75rem;
+  --measure: 65ch;
+  --ff: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+
+Use clamp() for font sizes, e.g.: font-size: clamp(1rem, 1.8vw, 1.125rem); for body, clamp(1.8rem, 5.6vw, 3.2rem) for H1.
+
+
+Micro-interactions
+CTA and nav links: subtle scale/translate on hover and focus with will-change: transform.
+
+
+Small entrance animation for hero text (fade+translate-up), but keep prefers-reduced-motion respected.
+
+
+Acceptance checklist to include in the final response
+Files: index.html, styles.css, script.js, README.md, /assets present.
+
+
+Semantic HTML with header/main/section/footer.
+
+
+CSS variables and clamp() typography.
+
+
+Mobile-first responsive layout (Flexbox/Grid).
+
+
+Logical properties used.
+
+
+aspect-ratio for media.
+
+
+Dark/light mode via prefers-color-scheme.
+
+
+Accessible focus states, alt text, ARIA for menu.
+
+
+Minimal JS: mobile nav toggle + Esc to close + keyboard-friendly.
+
+
+Well-commented code and README with preview instructions.
+
+
+Optional but appreciated
+Provide one small inline CSS-only decorative geometric SVG (as background/hero accent).
+
+
+Include a small prefers-reduced-motion fallback for users who opt out of motion.
+
+
+Provide brief notes in README about how to swap images, change palette, and extend the site.
+
