@@ -78,7 +78,10 @@ navLinks.forEach(link => {
 /**
  * SMOOTH SCROLL FOR ANCHOR LINKS (OPTIONAL ENHANCEMENT)
  * Provides smooth scrolling behavior for in-page navigation
+ * Respects prefers-reduced-motion user preference
  */
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     const href = this.getAttribute('href');
@@ -88,12 +91,13 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     
     const targetElement = document.querySelector(href);
     
-    // Only prevent default and smooth scroll if target exists
+    // Only prevent default and scroll if target exists
     if (targetElement) {
       e.preventDefault();
       
+      // Use smooth scroll only if user hasn't requested reduced motion
       targetElement.scrollIntoView({
-        behavior: 'smooth',
+        behavior: prefersReducedMotion ? 'auto' : 'smooth',
         block: 'start'
       });
       
@@ -108,7 +112,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
  * ENTRANCE ANIMATION OBSERVER (OPTIONAL)
  * Respect prefers-reduced-motion for users who opt out
  */
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 // Only add intersection observer animations if user hasn't requested reduced motion
 if (!prefersReducedMotion) {

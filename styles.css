@@ -294,6 +294,7 @@ body {
 .geometric-accent {
   width: min(500px, 80vw);
   height: auto;
+  aspect-ratio: 1 / 1;
 }
 
 /* Hero content container */
@@ -405,6 +406,29 @@ body {
 .btn-ghost:focus {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
+}
+
+/* ============================================
+   MENU SECTION
+   ============================================ */
+
+.menu {
+  padding-block: var(--gap-2xl);
+  background-color: var(--surface);
+}
+
+.menu-container {
+  max-width: var(--measure);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+  text-align: center;
+}
+
+.section-intro {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 60ch;
+  margin-inline: auto;
 }
 
 /* ============================================
