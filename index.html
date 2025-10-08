@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Artisan coffee roasted to perfection. Discover our carefully curated selection of specialty coffee beans.">
+  <title>Ember Coffee — Artisan Roasted Coffee</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  
+  <!-- Skip to content link for keyboard users -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- Header with site logo and navigation -->
+  <header class="site-header">
+    <div class="header-container">
+      <!-- Logo with inline SVG -->
+      <a href="#" class="logo" aria-label="Ember Coffee home">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M16 4C11.5817 4 8 7.58172 8 12C8 14.4183 9.05357 16.5817 10.6863 18.1137L11.5 19V24C11.5 25.3807 12.6193 26.5 14 26.5H18C19.3807 26.5 20.5 25.3807 20.5 24V19L21.3137 18.1137C22.9464 16.5817 24 14.4183 24 12C24 7.58172 20.4183 4 16 4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M13 28H19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <span class="logo-text">Ember Coffee</span>
+      </a>
+
+      <!-- Primary navigation -->
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Toggle navigation menu">
+          <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M3 6H21M3 12H21M3 18H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#home" class="nav-link">Home</a></li>
+          <li><a href="#menu" class="nav-link">Menu</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content area -->
+  <main id="main">
+    
+    <!-- Hero section with headline, subheading, CTA -->
+    <section class="hero" id="home">
+      <div class="hero-container">
+        <!-- Decorative geometric SVG background -->
+        <div class="hero-bg" aria-hidden="true">
+          <svg class="geometric-accent" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:var(--accent);stop-opacity:0.15" />
+                <stop offset="100%" style="stop-color:var(--accent-2);stop-opacity:0.08" />
+              </linearGradient>
+            </defs>
+            <polygon points="100,20 180,70 160,150 40,150 20,70" fill="url(#grad1)" />
+            <circle cx="100" cy="100" r="60" fill="none" stroke="var(--accent)" stroke-width="0.5" opacity="0.3"/>
+          </svg>
+        </div>
+
+        <div class="hero-content">
+          <h1 class="hero-title">Crafted for Coffee Lovers</h1>
+          <p class="hero-subtitle">Small-batch artisan roasting meets precision brewing</p>
+          <p class="hero-description">Every bean is carefully sourced, roasted to perfection, and delivered fresh to your door. Experience the difference that passion and craft make in every cup.</p>
+          <a href="#menu" class="btn btn-primary">Explore Our Beans</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features / Values section -->
+    <section class="features" id="about">
+      <div class="features-container">
+        <h2 class="section-title">Why Ember Coffee</h2>
+        
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 28C22.6274 28 28 22.6274 28 16C28 9.37258 22.6274 4 16 4C9.37258 4 4 9.37258 4 16C4 22.6274 9.37258 28 16 28Z" stroke="currentColor" stroke-width="1.5"/>
+                <path d="M16 10V16L20 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Small Batch</h3>
+            <p class="feature-text">Roasted fresh daily in limited quantities to ensure peak flavor and quality control.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 12L16 4L26 12V26H6V12Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+                <path d="M12 26V16H20V26" stroke="currentColor" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Direct Trade</h3>
+            <p class="feature-text">We partner directly with farmers to ensure ethical sourcing and exceptional bean quality.</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M16 4L20 12H28L22 18L24 28L16 22L8 28L10 18L4 12H12L16 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="feature-title">Expert Roasting</h3>
+            <p class="feature-text">Each origin is carefully profiled to highlight its unique character and tasting notes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to action section -->
+    <section class="cta" id="contact">
+      <div class="cta-container">
+        <h2 class="cta-title">Start Your Coffee Journey</h2>
+        <p class="cta-text">Join our community of coffee enthusiasts and get exclusive access to limited releases.</p>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer with copyright and links -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <p class="footer-copy">&copy; 2025 Ember Coffee. All rights reserved.</p>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#privacy" class="footer-link">Privacy</a>
+        <a href="#terms" class="footer-link">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
