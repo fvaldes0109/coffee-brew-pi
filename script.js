@@ -154,6 +154,22 @@ const observer = new IntersectionObserver(
 
 items.forEach(item => observer.observe(item));
 
+const faqItems = document.querySelectorAll('.faq-item');
+
+faqItems.forEach(item => {
+  const questionBtn = item.querySelector('.faq-question');
+
+  questionBtn.addEventListener('click', () => {
+    faqItems.forEach(i => {
+      if (i !== item) i.classList.remove('open');
+    });
+
+    // Toggle current
+    item.classList.toggle('open');
+  });
+});
+
+
 /**
  * LOG INITIALIZATION
  * Confirm script loaded successfully (can be removed in production)
