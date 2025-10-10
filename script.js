@@ -138,6 +138,22 @@ if (!prefersReducedMotion) {
   });
 }
 
+const items = document.querySelectorAll('.gallery-item');
+
+const observer = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in-view');
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.2 } // triggers when 20% visible
+);
+
+items.forEach(item => observer.observe(item));
+
 /**
  * LOG INITIALIZATION
  * Confirm script loaded successfully (can be removed in production)
