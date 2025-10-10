@@ -446,6 +446,14 @@ body {
   padding-inline: var(--container-padding);
 }
 
+.gallery-title {
+  font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+  font-weight: var(--fw-bold);
+  text-align: center;
+  margin-block-end: var(--gap-xl);
+  color: var(--bg);
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
