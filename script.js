@@ -168,16 +168,20 @@ faqItems.forEach(item => {
   });
 });
 
+const basePath = window.location.pathname.includes('/coffee-brew-pi')
+  ? '/coffee-brew-pi/'
+  : '/';
+
 const content = [
   {
     heading: "Only the finest grains",
     text: "Enjoy our organical, beautiful grains, fresh from the fields and harvested with love.",
-    img: "images/grains.webp"
+    img: `${basePath}images/grains.webp`
   },
   {
     heading: "Unique designs",
     text: "Our professional baristas always come up with the most creative artworks for your cup.",
-    img: "images/design.webp"
+    img: `${basePath}images/design.webp`
   }
 ];
 
