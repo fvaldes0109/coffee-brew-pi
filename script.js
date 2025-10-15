@@ -149,7 +149,7 @@ const observer = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.2 } // triggers when 20% visible
+  { threshold: 0.2 }
 );
 
 items.forEach(item => observer.observe(item));
@@ -164,7 +164,6 @@ faqItems.forEach(item => {
       if (i !== item) i.classList.remove('open');
     });
 
-    // Toggle current
     item.classList.toggle('open');
   });
 });
