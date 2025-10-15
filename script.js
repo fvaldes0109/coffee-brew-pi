@@ -168,6 +168,50 @@ faqItems.forEach(item => {
   });
 });
 
+const content = [
+  {
+    heading: "Only the finest grains",
+    text: "Enjoy our organical, beautiful grains, fresh from the fields and harvested with love.",
+    img: "/images/grains.jpg"
+  },
+  {
+    heading: "Unique designs",
+    text: "Our professional baristas always come up with the most creative artworks for your cup.",
+    img: "/images/design.jpg"
+  }
+];
+
+const headingEl = document.getElementById("hero-heading");
+const textEl = document.getElementById("hero-text");
+const imgEl = document.getElementById("hero-img");
+const buttons = document.querySelectorAll(".btn");
+
+function triggerAnimation(element, animationName) {
+  element.style.animation = "none";
+  element.offsetHeight;
+  element.style.animation = `${animationName} 0.6s ease`;
+}
+
+buttons.forEach(btn => {
+  btn.addEventListener("click", () => {
+    const index = btn.dataset.index;
+
+    triggerAnimation(headingEl, "fadeOut");
+    triggerAnimation(textEl, "fadeOut");
+    triggerAnimation(imgEl, "fadeOut");
+
+    setTimeout(() => {
+      headingEl.textContent = content[index].heading;
+      textEl.textContent = content[index].text;
+      imgEl.src = content[index].img;
+
+      triggerAnimation(headingEl, "fadeIn");
+      triggerAnimation(textEl, "fadeIn");
+      triggerAnimation(imgEl, "fadeIn");
+    }, 400);
+  });
+});
+
 /**
  * LOG INITIALIZATION
  * Confirm script loaded successfully (can be removed in production)
