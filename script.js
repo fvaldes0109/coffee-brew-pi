@@ -138,7 +138,7 @@ if (!prefersReducedMotion) {
   });
 }
 
-const items = document.querySelectorAll('.gallery-item');
+const galleryItems = document.querySelectorAll('.gallery-item');
 
 const observer = new IntersectionObserver(
   (entries, observer) => {
@@ -151,8 +151,7 @@ const observer = new IntersectionObserver(
   },
   { threshold: 0.2 }
 );
-
-items.forEach(item => observer.observe(item));
+galleryItems.forEach(item => observer.observe(item));
 
 const faqItems = document.querySelectorAll('.faq-item');
 
@@ -164,10 +163,10 @@ faqItems.forEach(item => {
       if (i !== item) i.classList.remove('open');
     });
 
+
     item.classList.toggle('open');
   });
 });
-
 
 /**
  * LOG INITIALIZATION
