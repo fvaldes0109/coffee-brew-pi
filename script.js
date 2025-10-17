@@ -185,9 +185,9 @@ const content = [
   }
 ];
 
-const headingEl = document.getElementById("hero-heading");
-const textEl = document.getElementById("hero-text");
-const imgEl = document.getElementById("hero-img");
+const headingEl = document.getElementById("promo-heading");
+const textEl = document.getElementById("promo-text");
+const imgEl = document.getElementById("promo-img");
 const buttons = document.querySelectorAll(".btn");
 
 function triggerAnimation(element, animationName) {
